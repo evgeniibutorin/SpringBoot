@@ -25,11 +25,11 @@ public class CourseController {
         return courseDto.getCourseDtoList(courses);
     }
 
-//    @GetMapping("/courses/find")
-//    public List<CourseDto> getCoursesByStudentName(@RequestParam(value = "name") String name) {
-//        CourseDto courseDto = new CourseDto();
-//        return courseDto.getCourseDtoList(courseService.getCoursesByStudentName(name));
-//    }
+    @GetMapping("/courses/find")
+    public List<CourseDto> getCoursesByStudentName(@RequestParam(value = "name") String name) {
+        CourseDto courseDto = new CourseDto();
+        return courseDto.getCourseDtoList(courseService.getCoursesByStudentName(name));
+    }
 
     @GetMapping("/expensive_courses")
     public List<CourseDto> getExpensiveCourse() {

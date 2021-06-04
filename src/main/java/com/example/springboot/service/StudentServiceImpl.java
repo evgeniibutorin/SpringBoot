@@ -30,44 +30,44 @@ public class StudentServiceImpl implements StudentService {
         return students;
     }
 
-//    @Override
-//    @Transactional
-//    public List<Student> getStudentByCourseName(String name) {
-//        List<Student> students = studentDAO.findStudentsByCoursesName(name);
-//        for (Student student : students) {
-//            Hibernate.initialize(student.getCourses());
-//        }
-//        return students;
-//    }
-//
-//    @Override
-//    @Transactional
-//    public List<Student> findStudentByCoursesCost(int cost) {
-//        List<Student> students = studentDAO.findStudentByCoursesCost(cost);
-//        for (Student student : students) {
-//            Hibernate.initialize(student.getCourses());
-//        }
-//        return students;
-//    }
-//
-//    @Override
-//    @Transactional
-//    public List<Student> getStudentsWithExpensiveCourse(String cost) {
-//        List<Student> students = studentDAO.findStudentWithExpensiveCourse(cost);
-//        for (Student student : students) {
-//            Hibernate.initialize(student.getCourses());
-//        }
-//        return students;
-//    }
-//
-//    @Override
-//    @Transactional
-//    public List<Student> getStudentInList() {
-//        List<Student> students = studentDAO.findStudentInSomeList();
-//        for (Student student : students) {
-//            Hibernate.initialize(student.getCourses());
-//        }
-//        return students;
-//    }
+    @Override
+    @Transactional
+    public List<Student> getStudentByCourseName(String name) {
+        List<Student> students = studentDAO.findStudentsByCoursesName(name);
+        for (Student student : students) {
+            Hibernate.initialize(student.getCourses());
+        }
+        return students;
+    }
+
+    @Override
+    @Transactional
+    public List<Student> findStudentByCoursesCost(int cost) {
+        List<Student> students = studentDAO.findStudentByCoursesCost(cost);
+        for (Student student : students) {
+            Hibernate.initialize(student.getCourses());
+        }
+        return students;
+    }
+
+    @Override
+    @Transactional
+    public List<Student> getStudentsWithExpensiveCourse(String cost) {
+        List<Student> students = studentDAO.findStudentWithExpensiveCourse(cost);
+        for (Student student : students) {
+            Hibernate.initialize(student.getCourses());
+        }
+        return students;
+    }
+
+    @Override
+    @Transactional
+    public List<Student> getStudentInList() {
+        List<Student> students = studentDAO.findStudentInSomeList();
+        for (Student student : students) {
+            Hibernate.initialize(student.getCourses());
+        }
+        return students;
+    }
 
 }

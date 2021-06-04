@@ -30,15 +30,15 @@ public class CourseServiceImpl implements CourseService {
         return courses;
     }
 
-//    @Override
-//    @Transactional
-//    public List<Course> getCoursesByStudentName(String name) {
-//        List<Course> courses = courseDao.findCoursesByStudentName(name);
-//        for (Course course : courses) {
-//            Hibernate.initialize(course.getStudents());
-//        }
-//        return courses;
-//    }
+    @Override
+    @Transactional
+    public List<Course> getCoursesByStudentName(String name) {
+        List<Course> courses = courseDao.findCoursesByStudentName(name);
+        for (Course course : courses) {
+            Hibernate.initialize(course.getStudents());
+        }
+        return courses;
+    }
 
     @Override
     @Transactional

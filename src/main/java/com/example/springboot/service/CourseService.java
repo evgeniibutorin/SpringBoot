@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface CourseService {
     List<Course> findAllCourses();
-//    List<Course> getCoursesByStudentName(String name);
+    List<Course> getCoursesByStudentName(String name);
     List<Course> findExpensiveCourse();
 }

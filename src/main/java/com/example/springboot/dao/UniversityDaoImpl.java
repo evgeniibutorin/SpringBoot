@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -17,7 +18,12 @@ import java.util.List;
 @Repository
 public class UniversityDaoImpl implements UniversityDao {
 
-    EntityManager em;
+    @PersistenceContext
+    private EntityManager em;
+
+    public UniversityDaoImpl(EntityManager em) {
+        this.em = em;
+    }
 
     @Override
     public List<University> listUniversity() {
